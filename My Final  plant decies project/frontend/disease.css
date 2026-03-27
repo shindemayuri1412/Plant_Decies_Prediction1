@@ -1,0 +1,69 @@
+/* Background */
+body {
+    background: linear-gradient(to right, #f1f8e9, #e8f5e9);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #145a32;
+}
+
+/* Prediction Card */
+.prediction-card {
+    border-radius: 15px;
+    background: #ffffff;
+    color: #333;
+}
+
+/* Input Fields */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 5px #ffc107;
+    border-color: #ffc107;
+}
+
+/* Button Hover */
+.btn-warning {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: #ffb300;
+    transform: scale(1.03);
+}
+
+/* Result Card */
+.result-card {
+    background: #ffffff;
+    color: #333;
+    padding: 20px;   /* increased */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Disease Status Text */
+/* Disease Status Text - Adjusted */
+.status-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 10px 0;
+}
+
+
+
+/* Confidence Text */
+.confidence-text {
+    font-size: 18px;
+    color: #555;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌾 Smart Agriculture | Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body class="feedback-page">
+
+    <nav class="navbar">
+        <div class="logo">🌾 AgroVision AI</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <div class="feed">
+        <div class="feedback-container">
+            <h2>We Value Your Thoughts</h2>
+            <p>share your thoughts with us</p>
+
+            <form id="feedbackForm">
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" required placeholder="Mayuri">
+                </div>
+
+                <div class="input-group">
+                    <label>Your Message</label>
+                    <textarea id="message" rows="5" required placeholder="Write your experience here..."></textarea>
+                </div>
+
+                <p id="statusMsg"></p>
+
+                <button type="submit" id="submitBtn">Submit Feedback</button>
+            </form>
+
+            <p class="home-link"><a href="index.html">← Back to Home</a></p>
+        </div>
+    </div>
+
+    <script>
+        let attemptsLeft = 3;
+        const submitBtn = document.getElementById('submitBtn');
+        const msgBox = document.getElementById('statusMsg');
+        const messageInput = document.getElementById('message');
+
+        const badWords = ["stupid", "idiot", "bulshit", "rubbish", "useless", "dumb","hate","fuck","shit","bitch"]; 
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const userText = messageInput.value.toLowerCase();
+            let foundBadWord = badWords.some(word => userText.includes(word));
+
+            if (foundBadWord) {
+                attemptsLeft--;
+
+                if (attemptsLeft > 0) {
+                    msgBox.style.color = "red";
+                    msgBox.innerText = "Please use appropriate words. " + attemptsLeft + " attempts left.";
+                    messageInput.style.borderColor = "blue";
+                } else {
+                    msgBox.style.color = "darkred";
+                    msgBox.innerText = "You have used inappropriate language too many times. Access Blocked.";
+                    submitBtn.disabled = true;
+                    messageInput.disabled = true;
+                    submitBtn.style.backgroundColor = "grey";
+                    submitBtn.innerText = "Blocked";
+                }
+            } else {
+                msgBox.style.color = "green";
+                msgBox.innerText = "Thank you! Your feedback has been submitted.";
+                messageInput.style.borderColor = "#ccc";
+                document.getElementById('feedbackForm').reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

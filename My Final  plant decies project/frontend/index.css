@@ -1,0 +1,122 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;  /* THIS pushes left & right */
+    align-items: center;
+    background: rgba(83, 145, 78, 0.934);
+    backdrop-filter: blur(8px);
+}
+
+/* Move links to right */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;   /* THIS forces right side */
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+
+    background: 
+        linear-gradient(rgba(27, 67, 50, 0.75), rgba(27, 67, 50, 0.75)),
+        url("all_img/index_bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #f1faee;
+    padding: 20px;
+}
+
+/* Heading */
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Button Container */
+.row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Glass Buttons */
+.btn {
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+/* Predict */
+.light {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f1faee;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Disease */
+.warning {
+    background: #a7c957;
+    color: #1b4332;
+}
+
+/* Dashboard */
+.dark {
+    background: #081c15;
+    color: #f1faee;
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

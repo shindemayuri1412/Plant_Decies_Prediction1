@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌾 Smart Agriculture | Signup</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="loginForm">
+
+    <nav class="navbar">
+        <div class="logo">🌾 AgroVision AI</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+<div class="login">
+    <div class="box">
+        <h1>Create Account </h1>
+         <h3>Join the future of smart farming</h3>
+
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <button type="submit">Signup</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+</div>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+            let msg = document.getElementById("message");
+
+            if (username === "" || email === "" || password === "" || confirmPassword === "") {
+                msg.style.color = "red";
+                msg.innerText = "Please fill all fields!";
+                return;
+            }
+
+            const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailCheck.test(email)) {
+                msg.style.color = "red";
+                msg.innerText = "Invalid email format!";
+                return;
+            }
+
+            if (password.length < 6) {
+                msg.style.color = "red";
+                msg.innerText = "Password must be at least 6 characters!";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                msg.style.color = "red";
+                msg.innerText = "Passwords do not match!";
+                return;
+            }
+
+            msg.style.color = "green";
+            msg.innerText = "Signup Successful! Redirecting to login...";
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 3200);
+        });
+    </script>
+
+</body>
+</html>
